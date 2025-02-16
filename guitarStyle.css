@@ -18,10 +18,26 @@ td:hover {
 }
 
 .oct {
-    background-color:lightslategrey;
+    background-color:lightgrey;
     font-style:italic;
+    font-weight:bolder;
 }
 
 .header {
     background-color:lightgrey;
+}
+
+#upper {
+    padding: 1%;
+}
+
+table {
+    padding: .5%;
+}
+
+#display {
+    padding:1%;
+    border-radius:1px;
+    border-style:inset;
+    border-color:lightgrey;
 }

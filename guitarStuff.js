@@ -1,8 +1,11 @@
+/**
+ * Notes object necessary for various things.
+ */
+const Notes = ['C','C♯/D♭','D','D♯/E♭','E','F','F♯/G♭','G','G♯/A♭','A','A♯/B♭','B'];
 
-const Notes = ['C','C#/Db','D','D#/Eb','E','F','F#/Gb','G','G#/Ab','A','A#/Bb','B'];
 
 /**
- * Builds a table out of flexboxes.
+ * Builds a real table...
  * @param {int} columns 
  * @param {int} rows 
  */
@@ -27,7 +30,7 @@ const fakeTable = (columns = 24,rows = 6) => {
                     list.appendChild(i);
                     column.appendChild(list);
                     })
-                list.addEventListener('change',() => {
+                list.addEventListener('click',() => {  
                     let pc = Notes.indexOf(list.value);
                     let frets = document.querySelectorAll(`.row${a}`);
                     for (let c = 1; c <= frets.length; c++) {
@@ -48,7 +51,9 @@ const fakeTable = (columns = 24,rows = 6) => {
 const attach = () => {
     document.querySelectorAll('td:not(.header)').forEach(item => {
         item.addEventListener('mouseover',() => {
-            //In progress
+            let string = item.id.match(/[0-9]+/ig);
+            let targ = document.getElementById('display');
+            targ.innerHTML = `String ${string[1]} fret ${string[0]} = ${item.textContent}`;
         })
     })
 }
@@ -71,7 +76,7 @@ document.addEventListener('DOMContentLoaded',() => {
         if (event.key === 'Enter') {
             document.getElementById('lower').innerHTML = '';
             fakeTable(24,parseInt(primaryIn.value));
-            console.log('TRIGGERED!');
+            // attach();
         }
     })
 })
