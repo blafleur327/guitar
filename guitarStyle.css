@@ -1,0 +1,27 @@
+tr {
+    border-radius: 1px;
+    border-style: dashed;
+    border-color:grey;
+}
+
+td {
+    text-align:center;
+    border-color:grey;
+    border-style:solid;
+    border-width:1px;
+    min-width: 50px;
+}
+
+td:hover {
+    cursor:pointer;
+    font-weight:bolder;
+}
+
+.oct {
+    background-color:lightslategrey;
+    font-style:italic;
+}
+
+.header {
+    background-color:lightgrey;
+}
